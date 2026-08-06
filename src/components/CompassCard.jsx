@@ -1,9 +1,10 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import { tokens } from "./tokens";
+import { getTokens } from "./tokens";
 import { categoryStyle } from "./data";
 
-export default function CompassCard({ item, lang }) {
+export default function CompassCard({ item, lang, theme }) {
+  const tokens = getTokens(theme);
   const cat = categoryStyle[item.category];
   const Icon = cat.icon;
 
@@ -12,7 +13,7 @@ export default function CompassCard({ item, lang }) {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative block rounded-lg border transition-all duration-150 hover:-translate-y-0.5"
+      className="group relative block rounded-lg border transition-all duration-150 hover:-translate-y-0.5 cursor-pointer"
       style={{ background: tokens.paper, borderColor: tokens.paperLine, padding: "1.1rem 1.25rem" }}
     >
       {/* bearing ticks — signature detail along the top edge */}

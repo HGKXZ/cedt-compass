@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import { Languages } from "lucide-react";
-import { tokens } from "./tokens";
+import { Languages, Sun, Moon } from "lucide-react";
+import { getTokens } from "./tokens";
 import { copy } from "./data";
 
-export default function Header({ lang, onToggleLang }) {
+export default function Header({ lang, onToggleLang, theme, onToggleTheme }) {
+  const tokens = getTokens(theme);
+
   return (
     <header
       className="flex items-center justify-between gap-4 px-4 sm:px-8"
@@ -28,14 +30,25 @@ export default function Header({ lang, onToggleLang }) {
         </div>
       </div>
 
-      <button
-        onClick={onToggleLang}
-        className="flex shrink-0 items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors"
-        style={{ borderColor: tokens.paperLine, color: tokens.navySoft, background: "#fff" }}
-      >
-        <Languages size={14} />
-        {lang === "en" ? "ไทย" : "EN"}
-      </button>
+      <div className="flex shrink-0 items-center gap-2">
+        <button
+          onClick={onToggleTheme}
+          aria-label="Toggle dark/light mode"
+          className="flex items-center justify-center rounded-md border h-8 w-8 sm:h-9 sm:w-9 transition-colors cursor-pointer"
+          style={{ borderColor: tokens.paperLine, color: tokens.navySoft, background: tokens.page }}
+        >
+          {theme === "dark" ? <Sun size={15} /> : <Moon size={15} />}
+        </button>
+
+        <button
+          onClick={onToggleLang}
+          className="flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs sm:text-sm font-medium transition-colors cursor-pointer"
+          style={{ borderColor: tokens.paperLine, color: tokens.navySoft, background: tokens.page }}
+        >
+          <Languages size={14} />
+          {lang === "en" ? "ไทย" : "EN"}
+        </button>
+      </div>
     </header>
   );
 }
