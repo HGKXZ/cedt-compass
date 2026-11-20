@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { getTokens } from "./tokens";
-import { links } from "./data";
+import { links, copy } from "./data";
 import Header from "./Header";
 import CategorySection from "./CategorySection";
 
@@ -27,6 +27,13 @@ export default function CompassPage() {
       />
 
       <main className="px-4 sm:px-8 pt-6 sm:pt-8 pb-10 max-w-5xl mx-auto">
+        <p
+          className="mb-8 max-w-2xl text-sm sm:text-base leading-relaxed"
+          style={{ color: tokens.navySoft }}
+        >
+          {copy[lang].intro}
+        </p>
+
         {grouped.map((g) => (
           <CategorySection key={g.key} catKey={g.key} lang={lang} items={g.items} theme={theme} />
         ))}

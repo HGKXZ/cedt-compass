@@ -40,6 +40,14 @@ export const links = [
 ];
 
 export const copy = {
-  en: { title: "CEDT Compass", subtitle: "Find your way to every CEDT portal." },
-  th: { title: "CEDT Compass", subtitle: "เข็มทิศผู้ชี้ทางไปยังทุกเว็บไซต์ของสาขา CEDT" },
+  th: {
+    title: "CEDT Compass",
+    subtitle: "ทางลัดไปยังทุกเว็บไซต์ของสาขา CEDT",
+    intro: "CEDT Compass รวมเว็บไซต์ทั้งหมดของสาขา CEDT คณะวิศวกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัยไว้ในที่เดียว ทั้งลงทะเบียนวิชาเลือก Capstone สมัครและประเมินการฝึกงาน และแลกแต้มกิจกรรม Talent Journey",
+  },
+  en: {
+    title: "CEDT Compass",
+    subtitle: "Find your way to every CEDT portal.",
+    intro: "CEDT Compass gathers every website for CEDT students at the Faculty of Engineering, Chulalongkorn University in one place: elective registration, Capstone, internship applications and evaluations, and Talent Journey activity points.",
+  },
 };

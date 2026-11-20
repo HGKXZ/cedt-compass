@@ -12,7 +12,7 @@ export default function Header({ lang, onToggleLang, theme, onToggleTheme }) {
       className="flex items-center justify-between gap-4 px-4 sm:px-8"
       style={{ background: tokens.paper, borderBottom: `1px solid ${tokens.paperLine}`, paddingTop: "1.25rem", paddingBottom: "1.25rem" }}
     >
-      <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+      <div data-nosnippet className="flex shrink-0 items-center gap-2">
         {/* Logo */}
         <div className="relative flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-full border overflow-hidden" style={{ borderColor: tokens.paperLine, background: "#fff" }}>
           <Image src="/logo.png" alt="CEDT Compass logo" fill className="object-cover" sizes="(min-width: 640px) 56px, 48px" />
